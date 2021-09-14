@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  labels:
+    app.kubernetes.io/instance: argocd
+  name: argocd
+  namespace: argocd
+spec:
+  dex:
+    openShiftOAuth: true
+  server:
+    route:
+      enabled: true
+  initialRepositories: >
+    - url:
+    https://github.com/tkagn/ocp4gitops-public
+  rbac:
+    defaultPolicy: 'role:admin'
+

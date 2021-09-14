@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  annotations:
+    olm.providedAPIs: AppProject.v1alpha1.argoproj.io,Application.v1alpha1.argoproj.io,ArgoCD.v1alpha1.argoproj.io,ArgoCDExport.v1alpha1.argoproj.io
+  labels:
+    app.kubernetes.io/instance: argocd
+  name: argocd-operatorgroup
+  namespace: argocd
+spec:
+  targetNamespaces:
+    - argocd
+
