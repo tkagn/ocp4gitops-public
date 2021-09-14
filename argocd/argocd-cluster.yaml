@@ -15,5 +15,5 @@ spec:
     - url:
     https://github.com/tkagn/ocp4gitops-public
   rbac:
-    defaultPolicy: 'role:admin'
+    defaultPolicy: ''
 
