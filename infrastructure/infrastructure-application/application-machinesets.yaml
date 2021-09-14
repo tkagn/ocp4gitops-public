@@ -11,5 +11,5 @@ spec:
   syncPolicy:
     automated: {}
   source:
-    path: /infrastructure/machinesets
+    path: infrastructure/machinesets
     repoURL: 'https://github.com/tkagn/ocp4gitops-public'
