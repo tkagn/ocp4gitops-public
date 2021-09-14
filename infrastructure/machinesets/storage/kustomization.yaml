@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
    - ./storage-worker-us-east-2a.yaml
-   # - ./ocp4-bwjvv-worker-us-east-2b.yaml
-   # - ./ocp4-bwjvv-worker-us-east-2c.yaml
+   - ./storage-worker-us-east-2b.yaml
+   # - ./storage-worker-us-east-2c.yaml
