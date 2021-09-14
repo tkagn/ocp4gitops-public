@@ -11,5 +11,5 @@ spec:
   syncPolicy:
     automated: {}
   source:
-    path: infrastructure-application
-    repoURL: 'https://github.com/tkagn/ocp4gitops-public/infrastructure'
+    path: infrastructure/infrastructure-application
+    repoURL: 'https://github.com/tkagn/ocp4gitops-public'
