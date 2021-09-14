@@ -24,7 +24,7 @@ spec:
           node-role.kubernetes.io/infra: ""
           cluster.ocs.openshift.io/openshift-storage: ""
       taints:
-        - effect: NoSchedule
+      - effect: NoSchedule
         key: node.ocs.openshift.io/storage
         value: "true"
       providerSpec:
