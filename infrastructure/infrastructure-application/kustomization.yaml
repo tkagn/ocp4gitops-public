@@ -5,5 +5,4 @@ commonLabels:
   app.kubernetes.io/part-of: infrastructure
 
 resources:
-  # - ./application-machinesets.yaml
 
