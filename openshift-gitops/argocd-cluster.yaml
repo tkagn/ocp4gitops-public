@@ -110,3 +110,6 @@ spec:
       requests:
         cpu: 250m
         memory: 1Gi
+  initialRepositories: >
+    - url:
+    https://github.com/tkagn/ocp4gitops-public

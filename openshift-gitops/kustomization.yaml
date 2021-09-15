@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   - ./ocpgitops-subscription.yaml
   - ./argocd-cluster.yaml
+  - ./project-infrastructure
+  - ./application-infrastructure.yaml
