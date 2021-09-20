@@ -6,4 +6,5 @@ commonLabels:
 
 resources:
   - application-machinesets.yaml
+  - ocs-application.yaml
 
