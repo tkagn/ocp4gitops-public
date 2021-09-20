@@ -6,5 +6,5 @@ commonLabels:
   app.kubernetes.io/part-of: infrastructure
 
 resources:
-  # - ./workers
+  - ./workers
   # - ./storage
