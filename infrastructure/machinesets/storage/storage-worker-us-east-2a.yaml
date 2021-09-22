@@ -10,14 +10,14 @@ spec:
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: ocp4-ws7pd
-      machine.openshift.io/cluster-api-machineset: ocp4-ws7pd-worker-us-east-2a
+      machine.openshift.io/cluster-api-machineset: ocp4-ws7pd-storage-us-east-2a
   template:
     metadata:
       labels:
         machine.openshift.io/cluster-api-cluster: ocp4-ws7pd
         machine.openshift.io/cluster-api-machine-role: worker
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: ocp4-ws7pd-worker-us-east-2a
+        machine.openshift.io/cluster-api-machineset: ocp4-ws7pd-storage-us-east-2a
     spec:
       metadata:
         labels:
