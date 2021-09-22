@@ -7,4 +7,4 @@ commonLabels:
 
 resources:
   - ./workers
-  # - ./storage
+  - ./storage
