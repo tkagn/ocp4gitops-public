@@ -1,7 +1,7 @@
 apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
-  name: ocp4-ws7pd-worker-us-east-2c
+  name: ocp4-ws7pd-storage-us-east-2c
   namespace: openshift-machine-api
   labels:
     machine.openshift.io/cluster-api-cluster: ocp4-ws7pd
