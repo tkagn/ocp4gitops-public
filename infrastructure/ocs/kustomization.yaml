@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - ocs-operator.yaml
-  - cephstoragecluster-cr.yaml
+  # - cephstoragecluster-cr.yaml
