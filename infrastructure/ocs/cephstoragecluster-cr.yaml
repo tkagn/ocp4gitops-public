@@ -7,7 +7,7 @@ spec:
   externalStorage: {}
   storageDeviceSets:
     - config: {}
-      count: 3
+      count: 1
       dataPVCTemplate:
         spec:
           accessModes:
@@ -15,7 +15,7 @@ spec:
           resources:
             requests:
               storage: "2Ti"
-          storageClassName: managed-premium
+          storageClassName: gp2
           volumeMode: Block
       name: ocs-deviceset
       placement: {}
