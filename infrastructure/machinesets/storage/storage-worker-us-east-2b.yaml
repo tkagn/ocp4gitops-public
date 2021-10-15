@@ -19,7 +19,10 @@ spec:
         machine.openshift.io/cluster-api-machine-type: worker
         machine.openshift.io/cluster-api-machineset: ocp4-zprm4-storage-us-east-2b
     spec:
-      metadata: {}
+      metadata:
+        labels:
+          cluster.ocs.openshift.io/openshift-storage: ''
+          node-role.kubernetes.io/infra: ''
       taints:
         - effect: NoSchedule
           key: node.ocs.openshift.io/storage
