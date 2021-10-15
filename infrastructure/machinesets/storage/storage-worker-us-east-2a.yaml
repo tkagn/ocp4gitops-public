@@ -6,7 +6,7 @@ metadata:
   labels:
     machine.openshift.io/cluster-api-cluster: ocp4-zprm4
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: ocp4-zprm4
@@ -20,6 +20,10 @@ spec:
         machine.openshift.io/cluster-api-machineset: ocp4-zprm4-storage-us-east-2a
     spec:
       metadata: {}
+      taints:
+        - effect: NoSchedule
+          key: node.ocs.openshift.io/storage
+          value: 'true'
       providerSpec:
         value:
           userDataSecret:
