@@ -5,7 +5,7 @@ commonLabels:
   app.kubernetes.io/part-of: infrastructure
 
 resources:
-#  - application-machinesets.yaml
+  - application-machinesets.yaml
   - ocs-application.yaml
   - oadp-application.yaml
 
