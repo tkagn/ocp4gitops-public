@@ -7,7 +7,7 @@ spec:
   externalStorage: {}
   storageDeviceSets:
     - config: {}
-      count: 1
+      count: 2
       dataPVCTemplate:
         spec:
           accessModes:
