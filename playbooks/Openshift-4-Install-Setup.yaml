@@ -1,0 +1,80 @@
+---
+# Playbook to setup OCP4 install host
+
+- hosts: localhost
+  become: True
+  tasks:
+    - name: Get current_working_directory
+      shell: pwd
+      register: current_working_directory
+
+    - name: Generate temp directory in working directory
+      file:
+        path: "{{  current_working_directory.stdout }}/temp"
+        state: directory
+      register: temp_dir
+
+    - name: Download the latest AWS Command Line Interface
+      get_url:
+        url: "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
+        dest: "{{ temp_dir.path }}/awscli-bundle.zip"
+
+    - name: Install the AWS CLI into /bin/aws
+      command: "{{ item }}"
+      args:
+        chdir: "{{ temp_dir.path }}"
+      with_items:
+        - "unzip -f awscli-bundle.zip"
+        #- "{{ temp_dir.path }}/awscli-bundle/install -i /usr/local/aws -b /bin/aws"
+
+# Openshift oc command
+    - name: Download the latest oc command
+      get_url: 
+        url: "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz"
+        dest: "{{ temp_dir.path }}/openshift-client-linux.tar.gz"
+
+    - name: Install oc into /usr/local/bin
+      command: "{{ item }}"
+      args:
+        chdir: "{{ temp_dir.path }}"
+      with_items:
+        - "tar -xvf openshift-client-linux.tar.gz -C /usr/local/bin"
+        - "rm -f {{ temp_dir.path }}/openshift-client-linux.tar.gz /usr/local/bin/README.md"
+
+# Openshift Installer
+    - name: Download the latest openshift-install
+      get_url:
+        url: "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-install-linux.tar.gz"
+        dest: "{{ temp_dir.path }}/openshift-install-linux.tar.gz"
+
+    - name: Install openshift-install into /usr/local/bin
+      command: "{{ item }}"
+      args:
+        chdir: "{{ temp_dir.path }}"
+      with_items:
+        - "tar -xvf openshift-install-linux.tar.gz -C /usr/local/bin"
+        - "rm -f {{ temp_dir.path }}/openshift-install-linux.tar.gz /usr/local/bin/README.md"
+
+# Helm Tool
+    - name: Download and install the latest Helm tool
+      get_url:
+        url: "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/helm-linux-amd64"
+        dest: "/usr/local/bin/helm"
+        mode: "0555"
+
+# Install completion scripts
+    - name: Install completion scripts
+      shell: "{{ item }}"
+      args:
+        executable: /bin/bash
+      with_items:
+        - "/usr/local/bin/oc completion bash > /etc/bash_completion.d/oc-completion"
+        - "/usr/local/bin/openshift-install completion bash > /etc/bash_completion.d/openshift-install-completion"
+        - "/usr/local/bin/helm completion bash > /etc/bash_completion.d/helm-completion"
+
+# Post 
+  post_tasks:
+    - name: Remove temp directory
+      file:
+         path: "{{  current_working_directory.stdout }}/temp"
+         state: absent

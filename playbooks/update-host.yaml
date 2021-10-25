@@ -1,0 +1,11 @@
+---
+# This playbook updates the host.
+
+- name: Play to update packages to latest version
+  hosts: localhost
+  become: True
+  tasks:
+    - name: Update packages
+      package:
+        name: "*"
+        state: latest
