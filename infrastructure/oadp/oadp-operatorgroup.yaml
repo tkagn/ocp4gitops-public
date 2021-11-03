@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
   name: oadp-operator
-  namespace: oadp-operator
+  namespace: openshift-adp
 spec:
   targetNamespaces:
-    - oadp-operator
+    - openshift-adp
