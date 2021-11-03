@@ -63,13 +63,6 @@
         mode: "0555"
 
 
-# Generate SSH keypair
-    - name: Generate SSH keypair
-      openssh_keypair:
-        path: {{ current_working_directory }}/.ssh/ocp4-ec
-        size: 2048
-        type: rsa
-        state: present
 
 # Install completion scripts
     - name: Install completion scripts
