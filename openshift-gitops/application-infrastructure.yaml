@@ -14,4 +14,4 @@ spec:
       selfHeal: true
   source:
     path: infrastructure/infrastructure-application
-    repoURL: ''
+    repoURL: 'https://github.com/tkagn/ocp4gitops-public'
