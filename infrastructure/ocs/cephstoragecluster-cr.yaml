@@ -7,7 +7,7 @@ spec:
   externalStorage: {}
   storageDeviceSets:
     - config: {}
-      count: 2
+      count: 1
       dataPVCTemplate:
         spec:
           accessModes:
@@ -15,7 +15,7 @@ spec:
           resources:
             requests:
               storage: "500Gi"
-          storageClassName: gp2
+          storageClassName: gp2-csi
           volumeMode: Block
       name: ocs-deviceset
       placement: {}
@@ -24,4 +24,3 @@ spec:
       resources: {}
 
 # Update count to 2 to scale up OCS device set to 2 device sets. Adjusting the count to n generates n device set(s) per machine.
-# 20210204 1811 - Updated count to 3 to scale up OCS device set to 3 device sets.

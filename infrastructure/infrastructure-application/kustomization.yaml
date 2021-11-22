@@ -8,5 +8,5 @@ resources:
   - application-machinesets.yaml
   - ocs-application.yaml
   - oadp-application.yaml
-  - lso-application.yaml
+#  - lso-application.yaml
 

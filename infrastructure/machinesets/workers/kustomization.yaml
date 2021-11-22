@@ -2,6 +2,3 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-   - ./ocp4-ws7pd-worker-us-east-2a.yaml
-   #- ./ocp4-bwjvv-worker-us-east-2b.yaml
-   #- ./ocp4-bwjvv-worker-us-east-2c.yaml
