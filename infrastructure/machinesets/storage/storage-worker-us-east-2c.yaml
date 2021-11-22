@@ -46,7 +46,7 @@ spec:
                 kmsKey:
                   arn: ''
                 volumeSize: 120
-                volumeType: gp2-csi
+                volumeType: gp2
           securityGroups:
             - filters:
                 - name: 'tag:Name'
