@@ -6,7 +6,7 @@ metadata:
   labels:
     machine.openshift.io/cluster-api-cluster: ocp4-jcqvj
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: ocp4-jcqvj
