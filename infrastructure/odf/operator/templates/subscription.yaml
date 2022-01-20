@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: {{ template "odf-operator.name" $ }}
+  namespace: {{ template "odf-operator.namespace" $ }}
+spec:
+  channel: {{ template "odf-operator.operatorChannel" $ }}
+  installPlanApproval: {{ .Values.operatorInstallPlanApproval }}
+  name: {{ template "odf-operator.subscriptionName" $ }}
+  source: {{ .Values.operatorSourceName }}
+  sourceNamespace: {{ .Values.operatorSourceNamespace }}

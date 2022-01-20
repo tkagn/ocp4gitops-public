@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "nameOverride",
+        "namespace",
+        "subscriptionNameOverride",
+        "odfOperatorChannelOverride",
+        "odfOperatorChannel",
+        "ocsOperatorChannel",
+        "operatorInstallPlanApproval",
+        "operatorSourceName",
+        "operatorSourceNamespace",
+        "operatorGroupName",
+        "operatorGroupCreate",
+        "clusterMonitoring",
+        "namespaceCreate"
+    ],
+    "properties": {
+        "nameOverride": {
+            "type": "string",
+            "description": " By setting this name can be overriden",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "namespace": {
+            "type": "string",
+            "description": " By setting this namespace can be overriden",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "subscriptionNameOverride": {
+            "type": "string",
+            "description": "By setting this subscription name can be overriden",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "odfOperatorChannelOverride": {
+            "type": "string",
+            "description": "By setting this operator channel can be overriden.",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "odfOperatorChannel": {
+            "type": "string",
+            "description": "OCS is renamed to ODF for 4.9",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "ocsOperatorChannel": {
+            "type": "string",
+            "description": "Channel to subscribe",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "operatorInstallPlanApproval": {
+            "type": "string",
+            "description": "Type of Approval, can be either Automatic or Manual",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "operatorSourceName": {
+            "type": "string",
+            "description": "Source of operator",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "operatorSourceNamespace": {
+            "type": "string",
+            "description": "Source namespace of operator",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "operatorGroupName": {
+            "type": "string",
+            "description": "Name of ODF operatorgroup",
+            "pattern": "^[a-z0-9-_]+$"
+        },
+        "operatorGroupCreate": {
+            "type": "boolean",
+            "description": "To define if a operator-group resource should be created",
+        },
+        "clusterMonitoring": {
+            "type": "boolean",
+            "description": "Turn on cluster monitoring of openshift-storage namespace",
+        },
+        "namespaceCreate": {
+            "type": "boolean",
+            "description": "To define whether or not to create the openshift-storage namespace",
+        }
+    },
+    "additionalProperties": true
+}

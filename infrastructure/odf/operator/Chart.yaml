@@ -1,0 +1,4 @@
+apiVersion: v2
+name: odf-operator
+description: A Helm chart for the OpenShift Data Foundation (ODF) operator
+version: 0.2.0
