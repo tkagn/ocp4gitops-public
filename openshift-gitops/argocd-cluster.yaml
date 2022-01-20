@@ -54,7 +54,6 @@ spec:
   disableAdmin: true
   rbac:
     policy: |-
-      g, system:cluster-admins, role:admin
       g, ocp-admins, role:admin
     scopes: '[groups]'
  
