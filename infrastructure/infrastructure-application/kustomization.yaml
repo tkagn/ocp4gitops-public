@@ -7,6 +7,7 @@ commonLabels:
 resources:
 #  - application-machinesets.yaml
 #  - ocs-application.yaml
+  - odf-application.yaml
 #  - oadp-application.yaml
 #  - crunchy-postgres-application.yaml
 #  - lso-application.yaml
