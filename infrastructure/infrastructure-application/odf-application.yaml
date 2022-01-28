@@ -12,8 +12,7 @@ spec:
     helm:
       releaseName: odf-operator
     chart: odf-operator
-    path: infrastructure/odf/operator
-    repoURL: 'https://github.com/tkagn/ocp4gitops-public'
+    repoURL: 'https://tkagn.github.io/helmcharts/'
     targetRevision: 0.2.0
   syncPolicy:
     automated:
