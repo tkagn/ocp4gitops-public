@@ -7,7 +7,7 @@ commonLabels:
 resources:
 #  - application-machinesets.yaml
 #  - ocs-application.yaml
-  - ocs-application-helmchart.yaml 
+#  - ocs-application-helmchart.yaml 
 #  - odf-application.yaml
 #  - odf-application-helmchart.yaml
 #  - oadp-application.yaml
