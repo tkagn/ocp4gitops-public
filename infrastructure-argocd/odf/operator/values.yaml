@@ -1,0 +1,13 @@
+nameOverride: "" # By setting this name can be overriden
+namespace: "openshift-storage" # By setting this namespace can be overriden
+subscriptionNameOverride: "" # By setting this subscription name can be overriden
+odfOperatorChannelOverride: "" # By setting this operator channel can be overriden
+odfOperatorChannel: stable-4.9 # OCS is renamed to ODF for 4.9
+ocsOperatorChannel: stable-4.8 # Channel to subscribe
+operatorInstallPlanApproval: Automatic # Type of Approval, can be either Automatic or Manual
+operatorSourceName: redhat-operators # Source of operator
+operatorSourceNamespace: openshift-marketplace # Source namespace of operator
+operatorGroupName: odf-operatorgroup # Name of ODF operatorgroup
+operatorGroupCreate: true # To define if a operator-group resource should be created
+clusterMonitoring: true # Turn on cluster monitoring of openshift-storage namespace
+namespaceCreate: true # To define whether or not to create the openshift-storage namespace

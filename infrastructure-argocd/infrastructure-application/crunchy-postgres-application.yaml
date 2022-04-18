@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pgo
+  namespace: openshift-gitops
+spec:
+  project: infrastructure
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+  source:
+    path: infrastructure/crunchy-pgo/helm/fromcrunchy/postgres-operator-examples/helm/install
+    repoURL: 'https://github.com/tkagn/ocp4gitops-public'
+    helm: {}
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: pgo 

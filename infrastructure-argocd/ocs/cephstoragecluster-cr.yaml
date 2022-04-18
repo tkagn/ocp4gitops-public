@@ -1,0 +1,26 @@
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
+metadata:
+  name: ocs-storagecluster
+  namespace: openshift-storage
+spec:
+  externalStorage: {}
+  storageDeviceSets:
+    - config: {}
+      count: 1
+      dataPVCTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: "500Gi"
+          storageClassName: gp2-csi
+          volumeMode: Block
+      name: ocs-deviceset
+      placement: {}
+      portable: true
+      replica: 3
+      resources: {}
+
+# Update count to 2 to scale up OCS device set to 2 device sets. Adjusting the count to n generates n device set(s) per machine.
