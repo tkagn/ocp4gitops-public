@@ -15,5 +15,5 @@ spec:
   syncOptions:
   - CreateNamespace=true
   source:
-    path: infrastructure/infrastructure-application
+    path: infrastructure-argocd/infrastructure-application
     repoURL: 'https://github.com/tkagn/ocp4gitops-public'
