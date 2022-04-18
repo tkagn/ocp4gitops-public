@@ -5,4 +5,4 @@ resources:
   - ./ocpgitops-subscription.yaml
   - ./argocd-cluster.yaml
   - ./project-infrastructure.yaml
-  - ./application-infrastructure.yaml
+#  - ./application-infrastructure.yaml
