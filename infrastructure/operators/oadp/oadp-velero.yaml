@@ -1,0 +1,18 @@
+apiVersion: oadp.openshift.io/v1alpha1
+kind: DataProtectionApplication
+metadata:
+  name: oadp-velero-instance
+  namespace: openshift-adp
+spec:
+  configuration:
+    restic:
+      enable: true
+      timeout: 10m
+    velero:
+      defaultPlugins:
+        - openshift
+        - aws
+        - csi
+      featureFlags:
+        - EnableCSI
+      noDefaultBackupLocation: true
