@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - oadp-namespace.yaml
   - oadp-operatorgroup.yaml
-  - oadp-subscription.yaml
+#  - oadp-subscription.yaml
 #  - oadp-cloud-credentials-secret.yaml
 #  - oadp-velero.yaml
   
