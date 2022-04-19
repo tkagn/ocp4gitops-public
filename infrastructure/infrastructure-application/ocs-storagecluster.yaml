@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ocs
+  name: ocs-storagecluster
   namespace: openshift-gitops
 spec:
   destination:
@@ -13,5 +13,5 @@ spec:
       allowEmpty: true
       selfHeal: true
   source:
-    path: infrastructure/ocs
+    path: infrastructure/ocs-storagecluster
     repoURL: 'https://github.com/tkagn/ocp4gitops-public'

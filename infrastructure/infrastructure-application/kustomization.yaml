@@ -8,7 +8,7 @@ resources:
   - oauth-application.yaml
   - application-machinesets.yaml
   - clusteroperators.yaml
-#  - ocs-application.yaml
+  - ocs-storagecluster.yaml
 #  - ocs-application-helmchart.yaml 
 #  - odf-application.yaml
 #  - odf-application-helmchart.yaml
