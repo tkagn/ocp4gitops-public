@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
   - ./ocpgitops-subscription.yaml     # Use eith openshift-gitops or argocd. Not both
   - ./openshift-gitops-cluster.yaml
-# - ./project-infrastructure.yaml
+  - ./project-infrastructure.yaml
 #  - ./application-infrastructure.yaml
