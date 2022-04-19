@@ -1,23 +1,23 @@
 apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
-  name: ocp4-jcqvj-storage-us-east-2a
+  name: cluster-24f2-xltdt-storage-us-east-2a
   namespace: openshift-machine-api
   labels:
-    machine.openshift.io/cluster-api-cluster: ocp4-jcqvj
+    machine.openshift.io/cluster-api-cluster: cluster-24f2-xltdt
 spec:
   replicas: 1
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: ocp4-jcqvj
-      machine.openshift.io/cluster-api-machineset: ocp4-jcqvj-storage-us-east-2a
+      machine.openshift.io/cluster-api-cluster: cluster-24f2-xltdt
+      machine.openshift.io/cluster-api-machineset: cluster-24f2-xltdt-storage-us-east-2a
   template:
     metadata:
       labels:
-        machine.openshift.io/cluster-api-cluster: ocp4-jcqvj
+        machine.openshift.io/cluster-api-cluster: cluster-24f2-xltdt
         machine.openshift.io/cluster-api-machine-role: worker
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: ocp4-jcqvj-storage-us-east-2a
+        machine.openshift.io/cluster-api-machineset: cluster-24f2-xltdt-storage-us-east-2a
     spec:
       metadata:
         labels:
@@ -51,19 +51,37 @@ spec:
             - filters:
                 - name: 'tag:Name'
                   values:
-                    - ocp4-jcqvj-worker-sg
+                    - cluster-24f2-xltdt-worker-sg
           kind: AWSMachineProviderConfig
           tags:
-            - name: kubernetes.io/cluster/ocp4-jcqvj
+            - name: kubernetes.io/cluster/cluster-24f2-xltdt
               value: owned
+            - name: guid
+              value: 24f2
+            - name: owner
+              value: swilson@redhat.com
+            - name: platform
+              value: Red_Hat_OPENTLC
+            - name: uuid
+              value: 71f20388-3f55-45c8-8983-c78a883d3ffa
+            - name: Stack
+              value: project ocp4-cluster-24f2
+            - name: catalog_item
+              value: OCS_4_Implementation_on_AWS
+            - name: email
+              value: swilson@redhat.com
+            - name: env_type
+              value: ocp4-cluster
           deviceIndex: 0
           ami:
-            id: ami-03d9208319c96db0c
+            id: ami-0c84b5c5255ec4777
           subnet:
             filters:
               - name: 'tag:Name'
                 values:
-                  - ocp4-jcqvj-private-us-east-2a
+                  - cluster-24f2-xltdt-private-us-east-2a
           apiVersion: awsproviderconfig.openshift.io/v1beta1
           iamInstanceProfile:
-            id: ocp4-jcqvj-worker-profile
+            id: cluster-24f2-xltdt-worker-profile
+
+
