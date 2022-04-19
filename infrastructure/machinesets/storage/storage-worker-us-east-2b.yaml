@@ -6,7 +6,7 @@ metadata:
   labels:
     machine.openshift.io/cluster-api-cluster: cluster-24f2-xltdt
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: cluster-24f2-xltdt
