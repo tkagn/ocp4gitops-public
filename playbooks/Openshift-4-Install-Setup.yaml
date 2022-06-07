@@ -1,23 +1,32 @@
 ---
 # Playbook to setup OCP4 install host
 
-- hosts: localhost
+- name: Deploy CLI utilities for deploying Red Hat OpenShift
+  hosts: localhost
   become: True
+
   tasks:
+
     - name: Get current_working_directory
       shell: pwd
       register: current_working_directory
 
     - name: Generate temp directory in working directory
       file:
-        path: "{{  current_working_directory.stdout }}/temp"
+        path: "{{ current_working_directory.stdout }}/temp"
         state: directory
       register: temp_dir
+    
+    - name: Print temp dir location
+      debug:
+        msg: "The temp directory is {{ temp_dir }}"
 
     - name: Download the latest AWS Command Line Interface
       get_url:
         url: "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
         dest: "{{ temp_dir.path }}/awscli-bundle.zip"
+      tags:
+        - aws_cli
 
     - name: Install the AWS CLI into /bin/aws
       command: "{{ item }}"
@@ -25,7 +34,16 @@
         chdir: "{{ temp_dir.path }}"
       with_items:
         - "unzip -f awscli-bundle.zip"
-        #- "{{ temp_dir.path }}/awscli-bundle/install -i /usr/local/aws -b /bin/aws"
+        - "awscli-bundle/install -i /usr/local/aws -b /bin/aws"
+      tags:
+        - aws_cli
+
+    - name: Print temp dir location
+      debug:
+        msg: "{{ current_working_directory.stdout }}"
+      tags:
+        - aws_cli
+
 
 # Openshift oc command
     - name: Download the latest oc command
