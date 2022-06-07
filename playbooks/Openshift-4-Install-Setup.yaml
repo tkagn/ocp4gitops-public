@@ -43,7 +43,12 @@
         msg: "{{ current_working_directory.stdout }}"
       tags:
         - aws_cli
-
+    
+    - name: Pause for 15 seconds to read current directory
+      pause:
+        seconds: 15
+      tags:
+        - aws_cli
 
 # Openshift oc command
     - name: Download the latest oc command
